@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import SignIn from "./components/Sign-In";
 
 import React from 'react';
 // Importamos o componente BrowserRouter e o componente Routes do pacote react-router-dom
@@ -24,6 +25,7 @@ function App() {
             
                 <Route path="/" element={<Home />} />
                 <Route path="/Login" element={<Login />} />
+                <Route path="/Sign-In" element={<SignIn />} />
 
             </Routes>
             </div>

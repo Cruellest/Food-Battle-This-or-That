@@ -104,6 +104,30 @@ button:focus-visible {
 }
 
 
+/*CSS for Sign-In*/
+
+#signinForm{
+  padding: 2% !important;
+}
+
+#signin-content{
+  align-content: center;
+  padding: 3%;
+  margin: 0%;
+}
+
+
+#signin {
+  align-content: center !important;
+  background-color:  #1a1a1a;
+  color: white !important;
+  width: 50%;
+  height: 70%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2%;
+  margin-bottom: 10%;
+}
+
 /*CSS for Login*/
 #tittleText{
   width: 100%;
@@ -113,20 +137,28 @@ button:focus-visible {
 }
 
 
-#tittleLogin {
+#tittleAll {
   width: 35%;
   margin-top: 2%;
 }
 
 
+#input{
+  width: 70% !important;
+}
+
 #loginForm{
-  padding: 2%;
+  padding: 2% !important;
 }
 
 #login-content{
   align-content: center;
-  padding: 2%;
+  padding: 3%;
   margin: 0%;
+}
+
+#signinButton{
+  color:#ffc107;
 }
 
 #login {
