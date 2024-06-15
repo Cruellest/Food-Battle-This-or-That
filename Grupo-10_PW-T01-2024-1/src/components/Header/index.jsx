@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import { Navigate } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -20,10 +21,10 @@ const Header = () => {
                     </form>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+                        <a class="nav-link dropdown-toggle" href="Categories" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -43,7 +44,7 @@ const Header = () => {
                         </ul>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page">Sign in/Login</a>
+                        <a class="nav-link active" href="/Login" aria-current="page">Sign in/Login</a>
                         </li>
                     </ul>
                     </div>

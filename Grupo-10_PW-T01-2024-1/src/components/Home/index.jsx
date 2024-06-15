@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Landing() {
+function Home() {
   return (
     <div class="container-fluid" id="landing">
-        <div class="container text-center" id="landing-content">
-            <img id="tittle" src='../src/assets/tittle.png'/>  
+        <div class="container-md text-center" id="landing-content">
+            <img id="tittleLanding" src='../src/assets/tittleWhite.png'/>  
             <div class="row" id="row-landing">
                 <div class="container text-center">
                     Which dish deserves to win this battle?
@@ -20,4 +20,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default Home;

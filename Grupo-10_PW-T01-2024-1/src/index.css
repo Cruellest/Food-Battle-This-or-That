@@ -71,12 +71,14 @@ button:focus-visible {
   margin-top: 3.5em;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+
 }
 
-/*CSS for Landing*/
+/*CSS for Home*/
 
-#tittle{
-  width: 55%;
+#tittleLanding{
+  width: 65%;
 
 }
 
@@ -95,10 +97,47 @@ button:focus-visible {
   align-content: center !important;
   background-color:  #1a1a1a;
   color: white !important;
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: auto;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 2%;
+}
+
+
+/*CSS for Login*/
+#tittleText{
+  width: 100%;
+  color:#ffc107;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+
+#tittleLogin {
+  width: 35%;
+  margin-top: 2%;
+}
+
+
+#loginForm{
+  padding: 2%;
+}
+
+#login-content{
+  align-content: center;
+  padding: 2%;
+  margin: 0%;
+}
+
+#login {
+  align-content: center !important;
+  background-color:  #1a1a1a;
+  color: white !important;
+  width: 50%;
+  height: 70%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2%;
+  margin-bottom: 10%;
 }
 
 /* CSS for Header */
@@ -118,7 +157,7 @@ button:focus-visible {
 #nav-background {
   background-color:  #1a1a1a;
   width: 100%;
-  height: 15%;
+  height: auto;
   position: fixed;
   background-color:  #1a1a1a;
   color: white !important;
