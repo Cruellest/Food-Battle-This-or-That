@@ -103,10 +103,52 @@ button:focus-visible {
   border-radius: 2%;
 }
 
+/*CSS for Categories*/
+#image{
+  padding: 0% !important;
+}
+
+h2{
+  width: 100%;
+  color:#000000;
+  font-weight: bolder;
+  padding: 2%;
+}
+
+#group-category{
+  padding: 2%;
+}
+
+#category{
+  padding: 0% !important;
+  align-content: center !important;
+  background-color: #ffc107;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4%;
+  margin-bottom: 10%;
+}
+
+#category-content{
+  align-content: center;
+  padding: 2%;
+  margin: 0%;
+}
+
+
+#food-small{
+  width: 100%;
+  padding: 4%;
+}
+
+#img-small{
+  width: 90%;
+}
 
 /*CSS for Sign-In*/
 
-#signinForm{
+#signin-form{
   padding: 2% !important;
 }
 
@@ -129,7 +171,7 @@ button:focus-visible {
 }
 
 /*CSS for Login*/
-#tittleText{
+#tittle-text{
   width: 100%;
   color:#ffc107;
   font-weight: bolder;
@@ -137,7 +179,7 @@ button:focus-visible {
 }
 
 
-#tittleAll {
+#tittle-all {
   width: 35%;
   margin-top: 2%;
 }
@@ -147,7 +189,7 @@ button:focus-visible {
   width: 70% !important;
 }
 
-#loginForm{
+#login-form{
   padding: 2% !important;
 }
 
@@ -157,7 +199,7 @@ button:focus-visible {
   margin: 0%;
 }
 
-#signinButton{
+#signin-button{
   color:#ffc107;
 }
 

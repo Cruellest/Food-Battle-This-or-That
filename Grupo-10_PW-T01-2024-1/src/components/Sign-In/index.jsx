@@ -30,7 +30,7 @@ function SignIn() {
         <div className="container-sm" id="signin">
           <div className="container-sm text-center" id="signin-content">
             <div id="tittleText">SIGN-IN</div>
-            <div className="container text-center" id="signinForm">
+            <div className="container text-center" id="signin-form">
                 Name
               </div>
               <center><div className="input-group mb-3" id="input">
@@ -44,7 +44,7 @@ function SignIn() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div></center>
-              <div className="container text-center" id="signinForm">
+              <div className="container text-center" id="signin-form">
                 E-mail
               </div>
               <center><div className="input-group mb-3" id="input">
@@ -58,7 +58,7 @@ function SignIn() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div></center>
-              <div className="container text-center" id="signinForm">
+              <div className="container text-center" id="signin-form">
                 Password
               </div>
               <center><div className="input-group mb-3" id="input">
@@ -72,7 +72,7 @@ function SignIn() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div></center>
-              <div className="container text-center" id="signinForm">
+              <div className="container text-center" id="signin-form">
               Confirm your password
               </div>
               <center><div className="input-group mb-3" id="input">
@@ -86,7 +86,7 @@ function SignIn() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div></center>
-              <div className="container text-center" id="signinForm">
+              <div className="container text-center" id="signin-form">
                 <button type="button" className="btn btn-warning" style={{ fontWeight: 'bolder' }} href='/' onClick={handleLogin}>
                   SIGN-IN
                 </button>

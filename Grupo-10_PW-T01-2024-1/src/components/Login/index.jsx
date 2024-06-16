@@ -25,12 +25,12 @@ function Login() {
     return (
       <div>
         <div className="container text-center" id="image">
-          <img id="tittleAll" src="../src/assets/tittleBlack.png" alt="Login Title" />
+          <img id="tittle-all" src="../src/assets/tittleBlack.png" alt="Login Title" />
         </div>
         <div className="container-sm" id="login">
           <div className="container-sm text-center" id="login-content">
             <div id="tittleText">LOGIN</div>
-              <div className="container text-center" id="loginForm">
+              <div className="container text-center" id="login-form">
                 E-mail
               </div>
               <center><div className="input-group mb-3" id="input">
@@ -44,7 +44,7 @@ function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div></center>
-              <div className="container text-center" id="loginForm">
+              <div className="container text-center" id="login-form">
                 Password
               </div>
               <center><div className="input-group mb-3" id="input">
@@ -60,9 +60,9 @@ function Login() {
               </div></center>
               <div className="container text-center">
               Don't have an account?
-              <a id="signinButton" href='/Sign-In'> Sign-in </a>
+              <a id="signin-button" href='/Sign-In'> Sign-in </a>
               </div>
-              <div className="container text-center" id="loginForm">
+              <div className="container text-center" id="login-form">
                 <button type="button" className="btn btn-warning" style={{ fontWeight: 'bolder' }} href='/' onClick={handleLogin}>
                   LOGIN
                 </button>

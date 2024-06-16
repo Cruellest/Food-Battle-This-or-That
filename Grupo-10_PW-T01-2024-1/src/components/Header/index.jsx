@@ -2,7 +2,6 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import { Navigate } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -23,25 +22,8 @@ const Header = () => {
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="Categories" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></hr></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ranking
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></hr></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Categories">Categories</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link active" href="/Login" aria-current="page">Sign in/Login</a>
