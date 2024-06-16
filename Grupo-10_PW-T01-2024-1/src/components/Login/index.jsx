@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import { auth } from '../../firebaseConnection';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Navigate, useNavigate } from 'react-router-dom'; // for redirection
 
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loginMessage, setLoginMessage] = useState('');
+    const navigate = useNavigate("");
   
     const handleLogin = async (e) => {
       e.preventDefault(); // Prevent default form submission behavior
@@ -14,7 +16,9 @@ function Login() {
       try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         setLoginMessage('Login successful!');
-        // Redirect or navigate to a protected area after successful login
+        navigate("/");
+        
+        
       } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
