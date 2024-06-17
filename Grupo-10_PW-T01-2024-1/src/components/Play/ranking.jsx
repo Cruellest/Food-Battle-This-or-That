@@ -1,49 +1,28 @@
 import React from 'react'
-import Category from './category';
 
 function Ranking() {
 return (
     <div>        
-        <div className="container text-center" id="image">
-          <img id="tittle-all" src="../src/assets/tittleBlack.png" alt="Login Title" />
-        </div>
         <div className="container text-center" id="group-category">
-            <h2>CATEGORIES</h2>
-                <div class="row align-items-end">
-                  <div class="col">
-                    <Category />
-                  </div>
-                  <div class="col">
-                    <Category />
-                  </div>
-                  <div class="col">
-                    <Category />
-                  </div>
-                </div>
-
-                <div class="row align-items-end">
-                  <div class="col">
-                    <Category />
-                  </div>
-                  <div class="col">
-                    <Category />
-                  </div>
-                  <div class="col">
-                    <Category />
-                  </div>
-                </div>
-
-                <div class="row align-items-end">
-                  <div class="col">
-                    <Category />
-                  </div>
-                  <div class="col">
-                    <Category />
-                  </div>
-                  <div class="col">
-                    <Category />
-                  </div>
-                </div>
+            <h2>CATEGORY RANKING</h2>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Food</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Name</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Name</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
   </div>
     

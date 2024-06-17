@@ -12,7 +12,7 @@ function Home() {
             </div>
             <div class="row" id="row-landing">
                 <div class="container text-center">
-                <button type="button" class="btn btn-warning" style={{ fontWeight: 'bolder' }}>Start</button>
+                <button type="button" class="btn btn-warning" style={{ fontWeight: 'bolder' }}>START</button>
                 </div>
             </div>
         </div>
