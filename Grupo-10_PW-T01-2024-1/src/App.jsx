@@ -3,20 +3,20 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import SignIn from "./components/Sign-In";
 import General from "./components/Categories";
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Play from "./components/Play";
+import { AuthProvider } from "./AuthContext";
 
 // Importamos as páginas HomePage, AboutPage e ContactPage
 
 // Função principal do componente App
 function App() {
   return (
- 
-    <div class="container-fluid" id="scream">
+    <AuthProvider>
+    <div className="container-fluid" id="scream">
         <BrowserRouter>
-                    
             <div>
                 <Header />
             </div>
@@ -39,6 +39,7 @@ function App() {
           <Footer />
         </div>
     </div>
+    </AuthProvider>
   );
 }
  
