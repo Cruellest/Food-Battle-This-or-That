@@ -33,7 +33,7 @@ function Login() {
         </div>
         <div className="container-sm" id="login">
           <div className="container-sm text-center" id="login-content">
-            <div id="tittleText">LOGIN</div>
+            <div id="tittle-text">LOGIN</div>
               <div className="container text-center" id="login-form">
                 E-mail
               </div>

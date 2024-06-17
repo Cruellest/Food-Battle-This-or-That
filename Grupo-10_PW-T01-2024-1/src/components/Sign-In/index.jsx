@@ -34,11 +34,11 @@ import { firestore } from '../../firebaseConnection';
         return (
           <div>
             <div className="container text-center" id="image">
-              <img id="tittleAll" src="../src/assets/tittleBlack.png" alt="Login Title" />
+              <img id="tittle-all" src="../src/assets/tittleBlack.png" alt="Login Title" />
             </div>
             <div className="container-sm" id="signin">
               <div className="container-sm text-center" id="signin-content">
-                <div id="tittleText">SIGN-IN</div>
+                <div id="tittle-text">SIGN-IN</div>
                   <div className="container text-center" id="signinForm">
                     E-mail
                   </div>

@@ -1,6 +1,9 @@
 import React from 'react'
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Category() {
+const navigate = useNavigate("");
+
 return (
     <div>        
         <div className="container-sm" id="category">
@@ -9,7 +12,7 @@ return (
                     <img class="rounded" id="img-small" src="../src/assets/image.png"/>
                 </div>
                 <div className="container-sm" id="login-form">
-                <button type="button" className="btn btn-light" style={{ fontWeight: 'bolder' }} href='/Play'>
+                <button type="button" className="btn btn-light" style={{ fontWeight: 'bolder' }} onClick={() =>navigate("/Play")}>
                   NAME
                 </button>
               </div>

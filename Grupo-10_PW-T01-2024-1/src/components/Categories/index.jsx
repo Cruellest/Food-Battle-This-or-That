@@ -1,5 +1,6 @@
 import React from 'react'
 import Category from './category';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function General() {
 return (
