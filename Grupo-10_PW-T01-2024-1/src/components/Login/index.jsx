@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { auth } from '../../firebaseConnection';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Navigate, useNavigate } from 'react-router-dom'; // for redirection
+import { useAuth } from '../../AuthContext'; // Import the context
+
 
 
 function Login() {
@@ -9,16 +11,18 @@ function Login() {
     const [password, setPassword] = useState('');
     const [loginMessage, setLoginMessage] = useState('');
     const navigate = useNavigate("");
+    const { setUser } = useAuth();
   
     const handleLogin = async (e) => {
       e.preventDefault(); // Prevent default form submission behavior
   
       try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        setUser(userCredential.user); // Set the user in context
         setLoginMessage('Login successful!');
         navigate("/");
         
-        
+
       } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
