@@ -29,6 +29,7 @@ function App() {
                   <Route path="/Sign-In" element={<SignIn />} />
                   <Route path="/Categories" element={<General />} />
                   <Route path="/Play" element={<Play />} />
+                  <Route path="/Play/:category" element={<Play />} />
 
               </Routes>
             </div>
