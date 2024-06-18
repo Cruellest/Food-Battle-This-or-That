@@ -6,8 +6,10 @@ import { useParams } from 'react-router-dom';
 function Play() {
   const { category } = useParams();
   const [meals, setMeals] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchMeals = async () => {
+    setLoading(true); // Indicate loading state
     let mealsData = [];
     
     if (category === 'Random') {
@@ -30,6 +32,7 @@ function Play() {
 
     const shuffledMeals = mealsData.sort(() => 0.5 - Math.random());
     setMeals(shuffledMeals.slice(0, 2));
+    setLoading(false); // End loading state
   };
 
   useEffect(() => {
@@ -43,13 +46,17 @@ function Play() {
       </div>
       <div className="container text-center" id="group-category">
         <h2>WHO WINS?</h2>
-        <div className="row align-items-center">
-          {meals.map(meal => (
-            <div className="col" id="play-content" key={meal.idMeal}>
-              <Food meal={meal} onVote={fetchMeals} />
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="row align-items-center">
+            {meals.map(meal => (
+              <div className="col" id="play-content" key={meal.idMeal}>
+                <Food meal={meal} onVote={fetchMeals} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <div className="container text-center" id="group-category">
         <Ranking />
