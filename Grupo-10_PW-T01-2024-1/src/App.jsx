@@ -1,20 +1,47 @@
-import React from "react";
 import Header from "./components/Header";
-import Landing from "./components/Landing";
-import './index.css';
- 
+import Home from "./components/Home";
+import Login from "./components/Login";
+import SignIn from "./components/Sign-In";
+import General from "./components/Categories";
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from "./components/Footer";
+import Play from "./components/Play";
+import { AuthProvider } from "./AuthContext";
+
+// Importamos as páginas HomePage, AboutPage e ContactPage
+
+// Função principal do componente App
 function App() {
-    return (
-        <>
-            <div class="container-fluid" id="scream">
-                <div>
-                    <Header />
-                </div>
-                <div id="content">
-                    <Landing />
-                </div>
+  return (
+    <AuthProvider>
+    <div className="container-fluid" id="scream">
+        <BrowserRouter>
+            <div>
+                <Header />
             </div>
-        </>
-    );
+
+            <div id="content">
+              <Routes>
+              
+                  <Route path="/" element={<Home />} />
+                  <Route path="/Login" element={<Login />} />
+                  <Route path="/Sign-In" element={<SignIn />} />
+                  <Route path="/Categories" element={<General />} />
+                  <Route path="/Play" element={<Play />} />
+                  <Route path="/Play/:category" element={<Play />} />
+
+              </Routes>
+            </div>
+
+        </BrowserRouter>
+
+        <div>
+          <Footer />
+        </div>
+    </div>
+    </AuthProvider>
+  );
 }
+ 
 export default App;

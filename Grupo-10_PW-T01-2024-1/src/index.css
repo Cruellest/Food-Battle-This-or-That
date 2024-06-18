@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -71,12 +72,14 @@ button:focus-visible {
   margin-top: 3.5em;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+
 }
 
-/*CSS for Landing*/
+/*CSS for Home*/
 
-#tittle{
-  width: 55%;
+#tittleLanding{
+  width: 65%;
 
 }
 
@@ -95,10 +98,151 @@ button:focus-visible {
   align-content: center !important;
   background-color:  #1a1a1a;
   color: white !important;
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: auto;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 2%;
+}
+
+/*CSS for Categories*/
+#image{
+  padding: 0% !important;
+}
+
+h2{
+  width: 100%;
+  color:#000000;
+  font-weight: bolder;
+  padding: 2%;
+}
+
+#group-category{
+  padding: 2%;
+}
+
+#category{
+  padding: 0% !important;
+  align-content: center !important;
+  background-color: #ffc107;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4%;
+  margin-bottom: 10%;
+}
+
+#play-content{
+  padding: 4%;
+  padding-top: 0%;
+}
+
+
+#category-big{
+  padding: 0% !important;
+  align-content: center !important;
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4%;
+}
+
+#category-content{
+  align-content: center;
+  padding: 2%;
+  margin: 0%;
+}
+
+#category-content-big{
+  align-content: center;
+  padding: 2%;
+  margin: 0%; 
+}
+
+#food-small{
+  width: 100%;
+  padding: 4%;
+}
+
+#food-big{
+  width: 100%;
+  padding: 4%;
+}
+
+#img-small{
+  width: 90%;
+}
+
+#img-big{
+  width: 90%;
+}
+
+/*CSS for Sign-In*/
+
+#signin-form{
+  padding: 2% !important;
+}
+
+#signin-content{
+  align-content: center;
+  padding: 3%;
+  margin: 0%;
+}
+
+
+#signin {
+  align-content: center !important;
+  background-color:  #1a1a1a;
+  color: white !important;
+  width: 50%;
+  height: 70%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2%;
+  margin-bottom: 10%;
+}
+
+/*CSS for Login*/
+#tittle-text{
+  width: 100%;
+  color:#ffc107;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+
+#tittle-all {
+  width: 35%;
+  margin-top: 2%;
+}
+
+
+#input{
+  width: 70% !important;
+}
+
+#login-form{
+  padding: 2% !important;
+}
+
+#login-content{
+  align-content: center;
+  padding: 3%;
+  margin: 0%;
+}
+
+#signin-button{
+  color:#ffc107;
+}
+
+#login {
+  align-content: center !important;
+  background-color:  #1a1a1a;
+  color: white !important;
+  width: 50%;
+  height: 70%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2%;
+  margin-bottom: 10%;
 }
 
 /* CSS for Header */
@@ -118,7 +262,7 @@ button:focus-visible {
 #nav-background {
   background-color:  #1a1a1a;
   width: 100%;
-  height: 15%;
+  height: auto;
   position: fixed;
   background-color:  #1a1a1a;
   color: white !important;
