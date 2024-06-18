@@ -10,7 +10,7 @@ function Play() {
   const fetchMeals = async () => {
     let mealsData = [];
     
-    if (category === 'All') {
+    if (category === 'Random') {
       const categoriesResponse = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
       const categoriesData = await categoriesResponse.json();
 
