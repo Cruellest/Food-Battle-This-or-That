@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Food from './food';
-import Ranking from './ranking';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams, useNavigate } from 'react-router-dom';
 
 function Play() {
   const { category } = useParams();
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const Navigate = useNavigate('');
 
   const fetchMeals = async () => {
     setLoading(true); // Indicate loading state
@@ -59,10 +59,11 @@ function Play() {
         )}
       </div>
       <div className="container text-center" id="group-category">
-        <Ranking />
+        <button className='btn btn-warning ' onClick={() => Navigate('/Ranking')} style={{ fontWeight: 'bolder' }}>Finalize</button>
       </div>
     </div>
   );
 }
 
 export default Play;
+  

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import { auth } from '../../firebaseConnection';
+import { auth } from '../../services/firebaseConnection';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Navigate, useNavigate } from 'react-router-dom'; // for redirection
-import { useAuth } from '../../AuthContext'; // Import the context
+import { useAuth } from '../../contexts/AuthContext'; // Import the context
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { firestore, doc, getDoc, setDoc, updateDoc, increment } from '../../firebaseConnection';
+import { firestore, doc, getDoc, setDoc, updateDoc, increment } from '../../services/firebaseConnection';
 
 function Food({ meal, onVote }) {
   const handleVote = async () => {

@@ -13,6 +13,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.user-link {
+  position: relative;
+}
+
+.user-link::after {
+  content: 'Logout';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  color: transparent;
+  transition: color 0.3s;
+  text-align: center;
+  font-weight: 500;
+}
+
+.user-link:hover::after {
+  color: #ffc107;
+
+}
+
+.user-link:hover {
+  color: transparent;
+}
+
 
 a {
   font-weight: 500;
@@ -42,7 +67,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -69,10 +94,8 @@ button:focus-visible {
 #content {
   align-content: center;
   display: block;
-  margin-top: 3.5em;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
+  width: 100vw;
+  height: 100vh;
 
 }
 
@@ -131,10 +154,6 @@ h2{
   margin-bottom: 10%;
 }
 
-#play-content{
-  padding: 4%;
-  padding-top: 0%;
-}
 
 
 #category-big{
@@ -246,36 +265,50 @@ h2{
 }
 
 /* CSS for Header */
-.navbar navbar-expand-lg bg-body-tertiary {
+.navbar navbar-expand-lg {
   width: 100% !important;
-  position: fixed;
 }
 
 #scream {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: fixed;
+  overflow-y: visible;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 #nav-background {
   background-color:  #1a1a1a;
   width: 100%;
-  height: auto;
-  position: fixed;
   background-color:  #1a1a1a;
   color: white !important;
+  position: sticky;
 }
+
+/* Ranking.css */
+
+.meal-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+
 
 #header {
   align-content: center;
-  width: 100%;
-  height: 15%;
-  position: fixed;
+  width: 100vw;
   background-color:  #1a1a1a;
   color: white !important;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  position:-webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  
 }
 
 .navbar-brand{
@@ -338,6 +371,7 @@ h2{
   color: white !important;
 }
 
+
 .dropdown-menu{
   width: 100% !important;
   background-color: #1a1a1a;
@@ -371,4 +405,11 @@ body{
   background-repeat: repeat;
   width: 100%;
   position: fixed;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  padding: 0;
+  margin: 0;
 }
