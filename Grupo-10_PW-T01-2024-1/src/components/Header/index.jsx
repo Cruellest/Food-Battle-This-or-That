@@ -57,10 +57,10 @@ const Header = () => {
                   <Link className="nav-link active" aria-current="page" to='/'>Home</Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link active" aria-current="page" onClick={()=>{user ? navigate('/Categories'): handleLogged()}}>Categories</button>
+                  <Link className="nav-link active" aria-current="page" to={user ? '/Categories': '/login'}>Categories</Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link active" aria-current="page" onClick={()=> {user ? navigate('/Ranking'): handleLogged()}}>Ranking</button>
+                  <Link className="nav-link active" aria-current="page" to={user ? '/Ranking': '/login'}>Ranking</Link>
                 </li>
                 <li className="nav-item">
                 {user ? 
