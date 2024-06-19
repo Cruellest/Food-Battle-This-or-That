@@ -4,8 +4,18 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Home() {
+    const {user} = useAuth();
+    const navigate = useNavigate();
 
-    const Navigate = useNavigate('');
+    const handleLogged = async(e) => {
+        if(user){
+            return navigate(`/categories`);
+        }
+
+        else{
+            return navigate(`/login`);
+                }
+    }
 
     
   return (
@@ -19,7 +29,7 @@ function Home() {
             </div>
             <div className="row" id="row-landing">
                 <div className="container text-center">
-                <button type="button" className="btn btn-warning" style={{ fontWeight: 'bolder' } } onClick={() => Navigate('/Categories')}>START</button>
+                <button type="button" className="btn btn-warning" style={{ fontWeight: 'bolder' } } onClick={() => handleLogged()}>START</button>
                 </div>
             </div>
         </div>
