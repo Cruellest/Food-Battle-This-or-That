@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import axios from 'axios';
+import axios from 'axios'
 
 function Ranking({ category }) {
   const [rankings, setRankings] = useState([]);

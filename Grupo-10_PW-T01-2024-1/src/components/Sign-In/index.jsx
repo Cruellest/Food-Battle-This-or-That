@@ -35,7 +35,7 @@ function SignIn() {
       });
 
       setRegisterMessage('Registration successful! Please login.');
-      navigate('/home');
+      navigate('/');
     } catch (error) {
       console.error('Registration error:', error.message);
       setRegisterMessage('Registration failed. Please try again.');
@@ -45,7 +45,7 @@ function SignIn() {
   return (
     <div>
       <div className="container text-center" id="image">
-        <img id="tittle-all" src="../src/assets/tittleBlack.png" alt="Login Title" />
+        <img id="tittle-all" src="/src/assets/tittleBlack.png" alt="Login Title" />
       </div>
       <div className="container-sm" id="signin">
         <div className="container-sm text-center" id="signin-content">

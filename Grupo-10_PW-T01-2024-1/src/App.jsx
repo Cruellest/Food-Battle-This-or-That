@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import React, { useState } from 'react';
 import { BrowserRouter} from 'react-router-dom';
 import { AuthProvider } from "./contexts/AuthContext";
 import RouteApp from "./routes";

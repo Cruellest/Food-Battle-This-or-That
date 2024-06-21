@@ -4,9 +4,10 @@ import SignIn from "../components/Sign-In";
 import General from "../components/Categories";
 import Play from "../components/Play";
 import SearchResults from '../components/SearchResults';
+import Ranking from "../components/Ranking";
+import NotFound from "../components/NotFound";
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
-import Ranking from "../components/Play/ranking";
 
 function RouteApp() {
     
@@ -21,6 +22,7 @@ function RouteApp() {
             <Route path="/Play/:category" element={<Play />} />
             <Route path="/Ranking" element={<Ranking />} />
             <Route path="/search/:searchTerm" element={<SearchResults />} />
+            <Route path ="/*" element={<NotFound/>} />
 
         </Routes>
     );

@@ -35,7 +35,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid" id="nav-background">
             <Link className="navbar-brand" to="/">
-              <img className="navbar-brand" src='../src/assets/logo.svg' alt="Logo" />
+              <img className="navbar-brand" src='/src/assets/logo.svg' alt="Logo" />
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span><i className="bi bi-list"></i></span>

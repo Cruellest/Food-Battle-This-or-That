@@ -13,7 +13,7 @@ function Home() {
         }
 
         else{
-            return navigate(`/login`);
+            return navigate(`/Login`);
                 }
     }
 
@@ -21,7 +21,7 @@ function Home() {
   return (
     <div className="container-fluid" id="landing">
         <div className="container-md text-center" id="landing-content">
-            <img id="tittleLanding" src='../src/assets/tittleWhite.png'/>  
+            <img id="tittleLanding" src='/src/assets/tittleWhite.png'/>  
             <div className="row" id="row-landing">
                 <div className="container text-center">
                     Which dish deserves to win this battle?
