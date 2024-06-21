@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { toast } from 'react-toastify';
 
 const Header = () => {
   const { user, userName, logout } = useAuth(); // Get the user, userName, and logout function from context
@@ -9,6 +10,7 @@ const Header = () => {
 
   const handleLogout = async (e) => {
     if (user) {
+      toast.warning("You Have been Logout!")
       return logout();
     } else {
       return;
