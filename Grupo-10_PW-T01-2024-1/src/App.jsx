@@ -6,6 +6,7 @@ import RouteApp from "./routes";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import {ToastContainer} from 'react-toastify';
 
 // Importamos as páginas HomePage, AboutPage e ContactPage
 
@@ -16,6 +17,19 @@ function App() {
         <BrowserRouter>
           <AuthProvider>
             <Header />
+            <ToastContainer
+              position="bottom-right"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+              transition: Bounce
+              />
             <div id="content">
               {RouteApp()}
             <div>
