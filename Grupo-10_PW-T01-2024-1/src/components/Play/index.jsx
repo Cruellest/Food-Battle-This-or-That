@@ -9,6 +9,7 @@ function Play() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const initialLoad = useRef(true);
+  const [votingInProgress, setVotingInProgress] = useState(false); // New state
 
   const fetchMeals = async () => {
     let mealsData = [];
@@ -53,7 +54,7 @@ function Play() {
     setLoading(true);
     try {
       const mealsData = await fetchMeals();
-      const nextMeals = mealsData.slice(0, 6);
+      const nextMeals = mealsData.slice(0, 10);  // Preload more meals
       await preloadMealImages(nextMeals);
       setPreloadedMeals(nextMeals);
       if (initialLoad.current) {
@@ -68,19 +69,25 @@ function Play() {
   }, [category]);
 
   const handleVote = async () => {
+    if (votingInProgress) return; // Prevent multiple rapid clicks
+    setVotingInProgress(true); // Set voting in progress
+
     try {
-      const newMeals = preloadedMeals.slice(2);
-      setMeals(newMeals.slice(0, 2));
-      if (newMeals.length <= 4) {
+      const remainingMeals = preloadedMeals.slice(2);
+      setMeals(remainingMeals.slice(0, 2));
+
+      if (remainingMeals.length <= 2) {
         const additionalMeals = await fetchMeals();
-        const combinedMeals = [...newMeals, ...additionalMeals.slice(0, 6 - newMeals.length)];
+        const combinedMeals = [...remainingMeals, ...additionalMeals.slice(0, 10 - remainingMeals.length)];
         await preloadMealImages(combinedMeals);
         setPreloadedMeals(combinedMeals);
       } else {
-        setPreloadedMeals(newMeals);
+        setPreloadedMeals(remainingMeals);
       }
     } catch (error) {
       console.error('Error handling vote:', error);
+    } finally {
+      setVotingInProgress(false); // Reset voting in progress
     }
   };
 
@@ -101,7 +108,7 @@ function Play() {
           <div className="row align-items-center">
             {meals.map(meal => (
               <div className="col" id="play-content" key={meal.idMeal}>
-                <Food meal={meal} onVote={handleVote} />
+                <Food meal={meal} onVote={handleVote} votingInProgress={votingInProgress} />
               </div>
             ))}
           </div>

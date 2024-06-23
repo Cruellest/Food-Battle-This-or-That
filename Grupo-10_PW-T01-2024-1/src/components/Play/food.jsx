@@ -1,24 +1,30 @@
 import React from 'react';
 import { firestore, doc, getDoc, setDoc, updateDoc, increment } from '../../services/firebaseConnection';
 
-function Food({ meal, onVote }) {
+function Food({ meal, onVote, votingInProgress }) {
   const handleVote = async () => {
-    const mealRef = doc(firestore, 'meals', meal.idMeal);
-    const mealSnapshot = await getDoc(mealRef);
+    if (votingInProgress) return; // Prevent multiple rapid clicks
 
-    if (mealSnapshot.exists()) {
-      await updateDoc(mealRef, {
-        votes: increment(1)
-      });
-    } else {
-      await setDoc(mealRef, {
-        name: meal.strMeal,
-        votes: 1
-      });
+    try {
+      const mealRef = doc(firestore, 'meals', meal.idMeal);
+      const mealSnapshot = await getDoc(mealRef);
+
+      if (mealSnapshot.exists()) {
+        await updateDoc(mealRef, {
+          votes: increment(1)
+        });
+      } else {
+        await setDoc(mealRef, {
+          name: meal.strMeal,
+          votes: 1
+        });
+      }
+
+      // Fetch new meals after voting
+      onVote();
+    } catch (error) {
+      console.error('Error updating votes:', error);
     }
-
-    // Fetch new meals after voting
-    onVote();
   };
 
   return (
@@ -34,6 +40,7 @@ function Food({ meal, onVote }) {
               className="btn btn-warning" 
               style={{ fontWeight: 'bolder' }} 
               onClick={handleVote}
+              disabled={votingInProgress} // Disable button when voting in progress
             >
               {meal.strMeal}
             </button>
