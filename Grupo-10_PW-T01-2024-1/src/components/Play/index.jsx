@@ -9,31 +9,36 @@ function Play() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const initialLoad = useRef(true);
-  const [votingInProgress, setVotingInProgress] = useState(false); // New state
+  const votingInProgressRef = useRef(false); // Ref to track voting in progress
 
   const fetchMeals = async () => {
     let mealsData = [];
     
-    if (category === 'Random') {
-      const categoriesResponse = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
-      const categoriesData = await categoriesResponse.json();
+    try {
+      if (category === 'Random') {
+        const categoriesResponse = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
+        const categoriesData = await categoriesResponse.json();
 
-      const allMealsPromises = categoriesData.categories.map(async (cat) => {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat.strCategory}`);
+        const allMealsPromises = categoriesData.categories.map(async (cat) => {
+          const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat.strCategory}`);
+          const data = await response.json();
+          return data.meals;
+        });
+
+        const allMeals = await Promise.all(allMealsPromises);
+        mealsData = allMeals.flat();
+      } else {
+        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
         const data = await response.json();
-        return data.meals;
-      });
+        mealsData = data.meals;
+      }
 
-      const allMeals = await Promise.all(allMealsPromises);
-      mealsData = allMeals.flat();
-    } else {
-      const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
-      const data = await response.json();
-      mealsData = data.meals;
+      const shuffledMeals = mealsData.sort(() => 0.5 - Math.random());
+      return shuffledMeals;
+    } catch (error) {
+      console.error('Error fetching meals:', error);
+      throw error;
     }
-
-    const shuffledMeals = mealsData.sort(() => 0.5 - Math.random());
-    return shuffledMeals;
   };
 
   const preloadImage = (src) => {
@@ -46,15 +51,20 @@ function Play() {
   };
 
   const preloadMealImages = async (meals) => {
-    const imagePromises = meals.map(meal => preloadImage(meal.strMealThumb));
-    await Promise.all(imagePromises);
+    try {
+      const imagePromises = meals.map(meal => preloadImage(meal.strMealThumb));
+      await Promise.all(imagePromises);
+    } catch (error) {
+      console.error('Error preloading images:', error);
+      throw error;
+    }
   };
 
   const preloadMeals = useCallback(async () => {
     setLoading(true);
     try {
       const mealsData = await fetchMeals();
-      const nextMeals = mealsData.slice(0, 10);  // Preload more meals
+      const nextMeals = mealsData.slice(0, 100);  // Preload more meals
       await preloadMealImages(nextMeals);
       setPreloadedMeals(nextMeals);
       if (initialLoad.current) {
@@ -69,8 +79,8 @@ function Play() {
   }, [category]);
 
   const handleVote = async () => {
-    if (votingInProgress) return; // Prevent multiple rapid clicks
-    setVotingInProgress(true); // Set voting in progress
+    if (votingInProgressRef.current) return; // Prevent multiple rapid clicks
+    votingInProgressRef.current = true; // Set voting in progress
 
     try {
       const remainingMeals = preloadedMeals.slice(2);
@@ -87,7 +97,7 @@ function Play() {
     } catch (error) {
       console.error('Error handling vote:', error);
     } finally {
-      setVotingInProgress(false); // Reset voting in progress
+      votingInProgressRef.current = false; // Reset voting in progress
     }
   };
 
@@ -108,7 +118,7 @@ function Play() {
           <div className="row align-items-center">
             {meals.map(meal => (
               <div className="col" id="play-content" key={meal.idMeal}>
-                <Food meal={meal} onVote={handleVote} votingInProgress={votingInProgress} />
+                <Food meal={meal} key={meal.idMeal} onVote={handleVote} votingInProgress={votingInProgressRef.current} />
               </div>
             ))}
           </div>
