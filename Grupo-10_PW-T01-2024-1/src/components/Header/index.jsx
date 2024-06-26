@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { toast } from 'react-toastify';
+import logo from '../../assets/logo.svg'
 
 const Header = () => {
   const { user, userName, logout } = useAuth(); // Get the user, userName, and logout function from context
@@ -37,7 +38,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid" id="nav-background">
             <Link className="navbar-brand" to="/">
-              <img className="navbar-brand" src='/src/assets/logo.svg' alt="Logo" />
+              <img className="navbar-brand" src={logo} alt="Logo" />
             </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span><i className="bi bi-list"></i></span>

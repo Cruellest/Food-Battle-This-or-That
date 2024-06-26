@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import thisOrThat_Logo from '../../assets/tittleWhite.png'
 
 
 function Home() {
@@ -21,7 +22,7 @@ function Home() {
   return (
     <div className="container-fluid" id="landing">
         <div className="container-md text-center" id="landing-content">
-            <img id="tittleLanding" src='/src/assets/tittleWhite.png'/>  
+            <img id="tittleLanding" src={thisOrThat_Logo}/>  
             <div className="row" id="row-landing">
                 <div className="container text-center">
                     Which dish deserves to win this battle?

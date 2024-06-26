@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
 import {toast} from 'react-toastify';
 import 'react-toastify/ReactToastify.css';
+import loginTitle from "../../assets/tittleBlack.png"
 
 function SignIn() {
   const [name, setName] = useState('');
@@ -46,7 +47,7 @@ function SignIn() {
   return (
     <div>
       <div className="container text-center" id="image">
-        <img id="tittle-all" src="/src/assets/tittleBlack.png" alt="Login Title" />
+        <img id="tittle-all" src={loginTitle} alt="Sign-in Title" />
       </div>
       <div className="container-sm" id="signin">
         <div className="container-sm text-center" id="signin-content">

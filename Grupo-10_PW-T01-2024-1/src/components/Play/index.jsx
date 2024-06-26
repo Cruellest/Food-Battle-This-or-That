@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Food from './food';
 import { useParams, useNavigate } from 'react-router-dom';
+import tittleBlack from "../../assets/tittleBlack.png"
 
 function Play() {
   const { category } = useParams();
@@ -117,7 +118,7 @@ function Play() {
   return (
     <div>
       <div className="container text-center" id="image">
-        <img id="tittle-all" src="/src/assets/tittleBlack.png" alt="Login Title" />
+        <img id="tittle-all" src={tittleBlack} alt="Tittle Black" />
       </div>
       <div className="container text-center" id="group-category">
         <h2>WHO WINS?</h2>

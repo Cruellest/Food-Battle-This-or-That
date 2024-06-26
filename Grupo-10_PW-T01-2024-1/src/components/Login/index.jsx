@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom'; // for redirection
 import { useAuth } from '../../contexts/AuthContext'; // Import the context
 import { toast } from 'react-toastify';
+import loginTitle from "../../assets/tittleBlack.png"
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ function Login() {
     return (
         <div>
             <div className="container text-center" id="image">
-                <img id="tittle-all" src="/src/assets/tittleBlack.png" alt="Login Title" />
+                <img id="tittle-all" src={loginTitle} alt="Login Title" />
             </div>
             <div className="container-sm" id="login">
                 <div className="container-sm text-center" id="login-content">
