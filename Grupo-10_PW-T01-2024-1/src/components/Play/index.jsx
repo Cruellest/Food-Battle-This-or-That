@@ -7,6 +7,7 @@ function Play() {
   const [meals, setMeals] = useState([]);
   const [preloadedMeals, setPreloadedMeals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showVotes, setShowVotes] = useState(false);
   const navigate = useNavigate();
   const initialLoad = useRef(true);
   const votingInProgressRef = useRef(false); // Ref to track voting in progress
@@ -81,24 +82,32 @@ function Play() {
   const handleVote = async () => {
     if (votingInProgressRef.current) return; // Prevent multiple rapid clicks
     votingInProgressRef.current = true; // Set voting in progress
+    setShowVotes(true); // Show votes temporarily
 
-    try {
-      const remainingMeals = preloadedMeals.slice(2);
-      setMeals(remainingMeals.slice(0, 2));
+    setTimeout(async () => {
+      try {
+        const remainingMeals = preloadedMeals.slice(2);
 
-      if (remainingMeals.length <= 2) {
-        const additionalMeals = await fetchMeals();
-        const combinedMeals = [...remainingMeals, ...additionalMeals.slice(0, 10 - remainingMeals.length)];
-        await preloadMealImages(combinedMeals);
-        setPreloadedMeals(combinedMeals);
-      } else {
-        setPreloadedMeals(remainingMeals);
+        // Preload images of new meals before updating the state
+        await preloadMealImages(remainingMeals.slice(0, 2));
+
+        setMeals(remainingMeals.slice(0, 2));
+
+        if (remainingMeals.length <= 2) {
+          const additionalMeals = await fetchMeals();
+          const combinedMeals = [...remainingMeals, ...additionalMeals.slice(0, 10 - remainingMeals.length)];
+          await preloadMealImages(combinedMeals);
+          setPreloadedMeals(combinedMeals);
+        } else {
+          setPreloadedMeals(remainingMeals);
+        }
+      } catch (error) {
+        console.error('Error handling vote:', error);
+      } finally {
+        votingInProgressRef.current = false; // Reset voting in progress
+        setShowVotes(false); // Hide votes after update
       }
-    } catch (error) {
-      console.error('Error handling vote:', error);
-    } finally {
-      votingInProgressRef.current = false; // Reset voting in progress
-    }
+    }, 2000); // 2 seconds delay to show the votes
   };
 
   useEffect(() => {
@@ -118,7 +127,7 @@ function Play() {
           <div className="row align-items-center">
             {meals.map(meal => (
               <div className="col" id="play-content" key={meal.idMeal}>
-                <Food meal={meal} key={meal.idMeal} onVote={handleVote} votingInProgress={votingInProgressRef.current} />
+                <Food meal={meal} key={meal.idMeal} onVote={handleVote} showVotes={showVotes} votingInProgress={votingInProgressRef.current} />
               </div>
             ))}
           </div>
