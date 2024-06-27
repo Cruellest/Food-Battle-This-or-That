@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { getFirestore, collection, orderBy, limit, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import axios from 'axios'
 
 function Ranking({ category }) {
   const [rankings, setRankings] = useState([]);
+  const [mealImages, setMealImages] = useState({});
 
   useEffect(() => {
     const fetchRankings = async () => {
@@ -18,13 +20,23 @@ function Ranking({ category }) {
         .slice(0, 20);
 
       setRankings(items);
+
+      // Fetch meal images from MealDB API
+      const images = {};
+      await Promise.all(items.map(async (item) => {
+        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${item.name}`);
+        if (response.data.meals) {
+          images[item.name] = response.data.meals[0].strMealThumb;
+        }
+      }));
+      setMealImages(images);
     };
 
     fetchRankings();
   }, [category]);
 
   return (
-    <div>
+    <div className="ranking-container">
       <div className="container text-center" id="group-category">
         <h2>FOODS RANKING</h2>
         <table className="table">
@@ -32,6 +44,7 @@ function Ranking({ category }) {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Food</th>
+              <th scope="col">Image</th>
               <th scope="col">Votes</th>
             </tr>
           </thead>
@@ -40,6 +53,13 @@ function Ranking({ category }) {
               <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>{item.name}</td>
+                <td>
+                  {mealImages[item.name] ? (
+                    <img src={mealImages[item.name]} alt={item.name} className="meal-image" />
+                  ) : (
+                    'Loading...'
+                  )}
+                </td>
                 <td>{item.votes}</td>
               </tr>
             ))}
