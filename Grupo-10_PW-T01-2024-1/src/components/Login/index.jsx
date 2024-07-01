@@ -13,7 +13,7 @@ function Login() {
     const { setUser } = useAuth();
 
     const handleLogin = async (e) => {
-        e.preventDefault(); // Prevent default form submission behavior
+        e.preventDefault();
 
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);

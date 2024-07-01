@@ -25,7 +25,7 @@ function Food({ meal, onVote, showVotes, votingInProgress }) {
   }, [meal.idMeal]);
 
   const handleVote = async () => {
-    if (votingInProgress) return; // Prevent multiple rapid clicks
+    if (votingInProgress) return; // Prevent multiple rapid clicks (Thank god it worked)
 
     try {
       const mealRef = doc(firestore, 'meals', meal.idMeal);
@@ -65,7 +65,7 @@ function Food({ meal, onVote, showVotes, votingInProgress }) {
                 className="btn btn-warning" 
                 style={{ fontWeight: 'bolder' }} 
                 onClick={handleVote}
-                disabled={votingInProgress} // Disable button when voting in progress
+                disabled={votingInProgress}
                 id="button-play"
               >
                 {meal.strMeal}
