@@ -53,12 +53,12 @@ function Food({ meal, onVote, showVotes, votingInProgress }) {
 
   return (
     <div>        
-      <div className="container-sm" id="category-big">
+      <div className="container-sm rounded" id="category-big">
         <div className="container-sm" id="category-content-big">
           <div className="container-sm" id="food-big">
             <img className="rounded" id="img-big" src={meal.strMealThumb} alt={meal.strMeal} />
           </div>
-          <div className="container-sm" id="login-form">
+          <div className="container-sm">
             {!showVotes && (
               <button 
                 type="button" 
@@ -66,12 +66,13 @@ function Food({ meal, onVote, showVotes, votingInProgress }) {
                 style={{ fontWeight: 'bolder' }} 
                 onClick={handleVote}
                 disabled={votingInProgress} // Disable button when voting in progress
+                id="button-play"
               >
                 {meal.strMeal}
               </button>
             )}
             {showVotes && votes !== null && (
-              <h4 style={{color: "#ffc107", fontWeight: "bolder"}}>Votes: {votes}</h4>
+              <h4 style={{color: "#ffc107", fontWeight: "bolder", marginBottom: "5%"}}>Votes: {votes}</h4>
             )}
           </div>
         </div>

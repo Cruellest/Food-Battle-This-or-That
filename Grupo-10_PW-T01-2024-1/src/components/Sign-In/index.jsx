@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
 import {toast} from 'react-toastify';
 import 'react-toastify/ReactToastify.css';
-import loginTitle from "../../assets/tittleBlack.png"
+import loginTitle from "../../assets/tittleBlack.png";
 
 function SignIn() {
   const [name, setName] = useState('');
@@ -45,15 +45,15 @@ function SignIn() {
   };
 
   return (
-    <div>
+    <div className='container-sm text-center'>
       <div className="container text-center" id="image">
         <img id="tittle-all" src={loginTitle} alt="Sign-in Title" />
       </div>
-      <div className="container-sm" id="signin">
+      <center><div className="container-sm rounded" id="signin">
         <div className="container-sm text-center" id="signin-content">
           <div id="tittle-text">SIGN-IN</div>
           <form onSubmit={handleRegister}>
-            <div className="container text-center" id="signinForm">
+            <div className="container text-center" id="signin-form">
               Name
             </div>
             <center>
@@ -69,7 +69,7 @@ function SignIn() {
                 />
               </div>
             </center>
-            <div className="container text-center" id="signinForm">
+            <div className="container text-center" id="signin-form">
               E-mail
             </div>
             <center>
@@ -85,7 +85,7 @@ function SignIn() {
                 />
               </div>
             </center>
-            <div className="container text-center" id="signinForm">
+            <div className="container text-center" id="signin-form">
               Password
             </div>
             <center>
@@ -101,7 +101,7 @@ function SignIn() {
                 />
               </div>
             </center>
-            <div className="container text-center" id="signinForm">
+            <div className="container text-center" id="signin-form">
               Confirm your password
             </div>
             <center>
@@ -117,7 +117,7 @@ function SignIn() {
                 />
               </div>
             </center>
-            <div className="container text-center" id="signinForm">
+            <div className="container text-center" id="signin-form">
               <button
                 type="submit"
                 className="btn btn-warning"
@@ -129,6 +129,7 @@ function SignIn() {
           </form>
         </div>
       </div>
+      </center>
     </div>
   );
 }

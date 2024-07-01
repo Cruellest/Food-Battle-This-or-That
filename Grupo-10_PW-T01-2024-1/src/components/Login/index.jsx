@@ -29,11 +29,11 @@ function Login() {
     };
 
     return (
-        <div>
+        <div className="container-sm text-center">
             <div className="container text-center" id="image">
                 <img id="tittle-all" src={loginTitle} alt="Login Title" />
             </div>
-            <div className="container-sm" id="login">
+            <center><div className="container-sm rounded" id="login">
                 <div className="container-sm text-center" id="login-content">
                     <div id="tittle-text">LOGIN</div>
                     <form onSubmit={handleLogin}>
@@ -69,7 +69,7 @@ function Login() {
                                 />
                             </div>
                         </center>
-                        <div className="container text-center">
+                        <div className="container text-center" id="login-form">
                             Don't have an account?
                             <a id="signin-button" href='/Sign-In'> Sign-in </a>
                         </div>
@@ -81,6 +81,7 @@ function Login() {
                     </form>
                 </div>
             </div>
+            </center>
         </div>
     );
 }

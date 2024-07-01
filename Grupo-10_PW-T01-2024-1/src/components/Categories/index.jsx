@@ -24,7 +24,7 @@ function General() {
       </div>
       <div className="container text-center" id="group-category">
         <h2>{categories != '' ? "CATEGORIES" : 'LOADING...'}</h2>
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="row row-cols-1 row-cols-md-4 g-4">
           {categories.map(category => (
             <div className="col" key={category.strCategory}>
               <Category category={category} />

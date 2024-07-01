@@ -125,17 +125,17 @@ function Play() {
         {loading ? (
           <div>Loading...</div>
         ) : (
-          <div className="row align-items-center">
+          <center><div className="row row-cols-1 row-cols-md-2 g-4">
             {meals.map(meal => (
               <div className="col" id="play-content" key={meal.idMeal}>
                 <Food meal={meal} key={meal.idMeal} onVote={handleVote} showVotes={showVotes} votingInProgress={votingInProgressRef.current} />
               </div>
             ))}
-          </div>
+          </div></center>
         )}
-      </div>
-      <div className="container text-center" id="group-category">
-        <button className='btn btn-warning' onClick={() => navigate('/Ranking')} style={{ fontWeight: 'bolder' }}>Finalize</button>
+        <div className="container text-center" id="final">
+          <button className='btn btn-warning' onClick={() => navigate('/Ranking')} style={{ fontWeight: 'bolder' }}>Finalize</button>
+        </div>
       </div>
     </div>
   );

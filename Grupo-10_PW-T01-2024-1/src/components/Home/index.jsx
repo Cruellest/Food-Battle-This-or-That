@@ -1,7 +1,8 @@
 import React from 'react'
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import thisOrThat_Logo from '../../assets/tittleWhite.png'
+import tittleBlack from "../../assets/tittleBlack.png"
+import logoHome from '../../assets/logo.svg'
 
 
 function Home() {
@@ -20,21 +21,33 @@ function Home() {
 
     
   return (
-    <div className="container-fluid" id="landing">
-        <div className="container-md text-center" id="landing-content">
-            <img id="tittleLanding" src={thisOrThat_Logo}/>  
-            <div className="row" id="row-landing">
-                <div className="container text-center">
-                    Which dish deserves to win this battle?
-                </div>
-            </div>
-            <div className="row" id="row-landing">
-                <div className="container text-center">
-                <button type="button" className="btn btn-warning" style={{ fontWeight: 'bolder' } } onClick={() => handleLogged()}>START</button>
-                </div>
-            </div>
+    <div className="container-sm">
+        <div className="container text-center" id="image">
+            <img id="tittle-all" src={tittleBlack} alt="Tittle Black" />
         </div>
-    </div>
+    <center>
+            <div className="container-sm rounded" id="landing">
+            <div className="row row-cols-1 row-cols-md-2 g-4" id="row">
+                    
+                    <div className="container-sm text-center" id="col">
+                            <img id="logo-svg" className="img-fluid" src={logoHome}/>  
+                    </div>
+                        
+                    <div className="container text-center" id="col">
+                        <p style={{ color: '#ffc107',  fontWeight: 'bolder' } }>Which dish deserves to win this battle?</p>
+                        <p>Choose from the best and most appetizing known meals and root for your favorites.</p>
+                    </div>
+
+
+            </div>
+            <div className="row" id="row">
+                <div className="container text-center">
+                    <button type="button" className="btn btn-warning" style={{ fontWeight: 'bolder' } } onClick={() => handleLogged()}>START</button>
+                </div>
+            </div>
+            </div>
+    </center>
+</div>
   );
 }
 

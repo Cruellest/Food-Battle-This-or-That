@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import axios from 'axios'
+import loginTitle from "../../assets/tittleBlack.png";
 
 function Ranking({ category }) {
   const [rankings, setRankings] = useState([]);
@@ -37,9 +38,12 @@ function Ranking({ category }) {
 
   return (
     <div className="ranking-container">
+      <div className="container text-center" id="image">
+        <img id="tittle-all" src={loginTitle} alt="Sign-in Title" />
+      </div>
       <div className="container text-center" id="group-category">
         <h2>FOODS RANKING</h2>
-        <table className="table">
+        <table className="table rounded">
           <thead>
             <tr>
               <th scope="col">#</th>

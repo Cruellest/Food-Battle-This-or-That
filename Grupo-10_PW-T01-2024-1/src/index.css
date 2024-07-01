@@ -101,30 +101,35 @@ button:focus-visible {
 
 /*CSS for Home*/
 
-#tittleLanding{
-  width: 65%;
+#logo-svg{
+  width: 85%;
 
-}
-
-#landing-content {
-  padding: 0%;
-  margin: 0%;
-}
-
-#row-landing{
-  padding: 5%;
-  margin: 0%;
-  align-content: center;
 }
 
 #landing {
   align-content: center !important;
   background-color:  #1a1a1a;
   color: white !important;
-  width: 60%;
+  width: 80%;
   height: auto;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 2%;
+  padding: 5%;
+}
+
+#col{
+  align-content: baseline;
+  padding-top: 10%;
+}
+
+#row{
+  padding: 2%;
+}
+
+/*CSS for Footer*/
+
+footer{
+  margin: 2em;
+  position: relative;
 }
 
 /*CSS for Categories*/
@@ -136,7 +141,11 @@ h2{
   width: 100%;
   color:#000000;
   font-weight: bolder;
-  padding: 2%;
+  padding-bottom: 5%;
+}
+
+#final{
+  padding-top: 5%;
 }
 
 #group-category{
@@ -150,8 +159,7 @@ h2{
   width: 100%;
   height: 100%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 
@@ -160,48 +168,56 @@ h2{
   padding: 0% !important;
   align-content: center !important;
   background-color: #1a1a1a;
-  width: 70%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 6%;
 }
 
 #category-content{
-  align-content: center;
   padding: 0%;
-  margin: 0%;
 }
 
 #category-content-big{
-  align-content: center;
-  padding-top: 2%;
-  padding-left: 0%;
-  padding-right: 0%;
-  margin: 0%; 
+  padding: 0%;
 }
 
 #food-small{
+  padding: 0%;
   width: 100%;
-  padding: 4%;
 }
 
 #food-big{
+  padding: 0%;
   width: 100%;
-  padding: 4%;
 }
 
+#button-play-2{
+  margin-bottom: 5%;
+}
+
+#button-play{
+  margin-bottom: 5%;
+}
+
+
 #img-small{
+  margin-top: 5%;
+  margin-bottom: 5%;
   width: 90%;
 }
 
 #img-big{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   width: 90%;
 }
 
 /*CSS for Sign-In*/
 
 #signin-form{
-  padding: 2% !important;
+  padding: 0.5em !important;
 }
 
 #signin-content{
@@ -215,11 +231,11 @@ h2{
   align-content: center !important;
   background-color:  #1a1a1a;
   color: white !important;
-  width: 50%;
-  height: 70%;
+  width: 70%;
+  height: auto;
+  margin-left: 3rem;
+  margin-right: 3rem;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 2%;
-  margin-bottom: 10%;
 }
 
 /*CSS for Login*/
@@ -230,19 +246,16 @@ h2{
   font-size: larger;
 }
 
-
 #tittle-all {
-  width: 35%;
-  margin-top: 2%;
+  width: 55%;
 }
 
-
 #input{
-  width: 70% !important;
+  width: auto !important;
 }
 
 #login-form{
-  padding: 2% !important;
+  padding: 0.5em !important;
 }
 
 #login-content{
@@ -259,11 +272,11 @@ h2{
   align-content: center !important;
   background-color:  #1a1a1a;
   color: white !important;
-  width: 50%;
-  height: 70%;
+  width: 70%;
+  height: auto;
+  margin-left: 3rem;
+  margin-right: 3rem;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 2%;
-  margin-bottom: 10%;
 }
 
 /* CSS for Header */

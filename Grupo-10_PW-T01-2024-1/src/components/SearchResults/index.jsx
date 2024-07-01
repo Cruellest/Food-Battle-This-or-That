@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import loginTitle from "../../assets/tittleBlack.png";
 
 const SearchResults = () => {
   const { searchTerm } = useParams();
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const Navigate = useNavigate('')
+  
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -27,7 +29,7 @@ const SearchResults = () => {
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <div className="row">
+        <div className="row rounded">
           {categories.map(category => (
             <div key={category.idCategory} className="col-md-4">
               <div className="card">
