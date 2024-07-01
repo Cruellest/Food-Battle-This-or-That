@@ -15,6 +15,7 @@ Prerequisites:
 * A computer with an Windows/MacOs/Linux/Unix-Like operating system
 * Git: https://git-scm.com/downloads
 * NPM: https://nodejs.org/pt/download/package-manager (22.3.0 Recomended)
+* Vite: https://vitejs.dev/guide/
 <br>
 <br>
 
