@@ -55,3 +55,5 @@ npm run build
 * Gabriel Paes Duarte Baltazar
 * Maria Fernanda Colombo
 
+We are grateful to Professor Ricardo Masao Kondo for his support
+
